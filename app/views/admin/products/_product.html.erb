@@ -1,14 +1,19 @@
 <tr id="<%= product.id %>" class="text-center">
   <td><%= product.sku %></td>
   <td><%= product.name %></td>
-  <td><%= product.status %></td>
+  <td>
+    <%= form_tag admin_product_path(product), method: :patch do %>
+      <%= select_tag :status, options_for_select(Product.statuses.keys.to_a, product.status), class: "form-control-sm" %>
+      <%= submit_tag 'Update', class: "btn btn-outline-info btn-sm" %>
+    <% end %>
+  </td>
   <td><%= product.updated_at.strftime("%F %T") %></td>
   <td>
     <% if user_signed_in? %>
-      <%= link_to 'Show', admin_product_path(product), remote: true, class: 'btn btn-outline-secondary' %>
-      <%= link_to 'Edit', edit_admin_product_path(product), remote: true, class: 'btn btn-outline-warning' %>
+      <%= link_to 'Show', admin_product_path(product), remote: true, class: 'btn btn-outline-secondary btn-sm' %>
+      <%= link_to 'Edit', edit_admin_product_path(product), remote: true, class: 'btn btn-outline-warning btn-sm' %>
       <%= link_to 'Delete', admin_product_path(product), remote: true,
-            method: 'delete', data: { confirm: "Are you sure to delete?" }, class: 'btn btn-outline-danger' %>
+            method: 'delete', data: { confirm: "Are you sure to delete?" }, class: 'btn btn-outline-danger btn-sm' %>
     <% end %>
   </td>
 </tr>

@@ -23,7 +23,10 @@ class Admin::ProductsController < ApplicationController
   end
 
   def update
-    if @product.update(product_params)
+    if params[:status].present?
+      @product.update(status: params[:status])
+      redirect_to admin_products_path
+    elsif @product.update(product_params)
       respond_to :js
     else
       respond_to { |format| format.js { render js: "alert('input error')" } }
