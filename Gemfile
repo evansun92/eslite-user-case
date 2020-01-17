@@ -33,6 +33,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n', '~> 1.9'
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'active_storage_validations'
+gem 'pry', '~> 0.12.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

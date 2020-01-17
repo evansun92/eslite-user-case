@@ -1,0 +1,6 @@
+$('#edit-container').html('<%= j render 'admin/products/product_form',
+                                   id: 'edit_product',
+                                   action: @product,
+                                   url: admin_product_path(@product),
+                                   title: 'Edit product' %>');
+$('#edit_product').modal('show');
