@@ -1,24 +1,24 @@
-# README
+## Rails 習作
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+假設有一個電商網站要請你/妳開發後台商品管理的功能，使用的角色是商品管理者。請依照下面的 User Case 開發一個後台
 
-Things you may want to cover:
 
-* Ruby version
+## User Case
 
-* System dependencies
+- 商品管理者要先登入後才能管理商品
+-	商品管理者會需要上架/下架商品
+-	商品會有”上架”，”下架”，”進貨中”這幾種狀態
+-	前台需要顯示商品原價和售價
+-	商品管理者能上傳/修改商品資料
+-	商品基本屬性要有
+    -	SKU
+    -	Name
+    -	Desc(HTML)
+    -	0 到多張商品圖
+-	商品管理者可以新增刪除商品圖
+-	商品管理者可以刪除商品
 
-* Configuration
+## 技術需求
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- 請使用 Rails 6 以上版本
+- 後台網址要放在 /admin/ path 下
