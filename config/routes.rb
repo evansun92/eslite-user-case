@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'admin/products#index'
+  resources :products, only: %i[index show]
+
+  root to: 'products#index'
+
   devise_for :users
 
   namespace :admin do

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <div class="d-flex flex-grow-1">
+        <span class="w-100 d-lg-none d-block"></span>
+        <%= link_to 'Eslite', products_path, class: 'navbar-brand' %>
+    </div>
+
+    <div class="collapse navbar-collapse flex-grow-1 text-right">
+      <ul class="navbar-nav ml-auto flex-nowrap">
+      <%= link_to 'Admin', admin_products_path, class: 'navbar-brand' %>
+      <% if current_user %>
+        <span class="navbar-brand"><%= current_user.email %></span>
+        <%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete, class: 'navbar-brand' %>
+      <% end %>
+      </ul>
+    </div>
+</nav>

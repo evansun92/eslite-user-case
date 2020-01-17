@@ -6,34 +6,34 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
       </div>
       <div class="modal-body overflow-auto">
-        <p>
+        <div>
           <strong>Name:</strong>
-          <%= @product.name %>
-        </p>
+          <span><%= @product.name %></span>
+        </div>
 
-        <p>
+        <div>
           <strong>Status:</strong>
-          <%= @product.status %>
-        </p>
+          <span><%= @product.status %></span>
+        </div>
 
-         <p>
+        <div>
           <strong>Original Price:</strong>
-          <%= @product.original_price %>
-        </p>
+          <span><%= @product.original_price %></span>
+        </div>
 
-         <p>
+        <div>
           <strong>Price:</strong>
-          <%= @product.price %>
-        </p>
+          <span><%= @product.price %></span>
+        </div>
 
-        <p>
+        <div>
           <strong>Pictures:</strong>
-          <div class='frame'>
+          <div class='d-flex flex-column'>
             <% @product.pics.each do |pic| %>
-              <%= image_tag pic %>
+              <%= image_tag pic, class: 'w-75 m-1' %>
             <% end %>
           </div>
-        </p>
+        </div>
       </div>
 
       <div class="modal-footer">
